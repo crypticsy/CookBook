@@ -1,18 +1,14 @@
-'''
 #Testing
 weight = [3, 2, 6, 8, 2, 6]     #assume characters in a file appears these number of times
 tree = {}
-for n,i in enumerate(values):
+for n,i in enumerate(weight):
     tree[n] = int(i)
-'''
 
 
 
 def findmin():
-    minkey, minval = -1, float('inf')
-    for i in tree.keys():
-        if tree[i]<minval:
-            minval,minkey = tree[i],i
+    minkey = min(tree, key = lambda k: tree[k])
+    minval = tree[minkey]
     tree.pop(minkey)
     return minkey,minval
 
