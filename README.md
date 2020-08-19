@@ -15,9 +15,11 @@ A collection of simple and elegant coding problems
 
 ### Dyanmic Programming
 * Sequence Alignment
+* Traveling Salesman Problem (Naive)
 
 ### Greedy Algorithm
 * Huffman Code
 
 ### Miscellaneous
+* BrainFuck Decoder
 * Roman Addition
