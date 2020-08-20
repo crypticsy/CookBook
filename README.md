@@ -1,5 +1,5 @@
 # CodeSoup
-A collection of simple and elegant coding problems
+A collection of simple and elegant coding problems, that I found interesting.
 
 
 ### Back Tracking
@@ -15,11 +15,11 @@ A collection of simple and elegant coding problems
 
 ### Dyanmic Programming
 * Sequence Alignment
-* Traveling Salesman Problem (Naive)
+* Traveling Salesman Problem (Bit mask)
 
 ### Greedy Algorithm
 * Huffman Code
 
 ### Miscellaneous
-* BrainFuck Decoder
+* Brainfuck Decoder
 * Roman Addition
