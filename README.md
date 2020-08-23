@@ -6,6 +6,7 @@ A collection of simple and elegant coding problems, that I found interesting.
 * Sudoku Solver
 
 ### Cryptography
+* Elliptic-Curve
 * Enigma without Plugboard
 * Straddling Checkerboard
 * XOR cipher
