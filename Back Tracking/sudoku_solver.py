@@ -3,7 +3,7 @@ sys.setrecursionlimit(10**6)
 
 
 grid,empty = [],[]
-row,col,table = {},{},{}
+row,col,table = [{x:set() for x in range(9)} for x in range(3)]
 
 def findemptycells():
     for x in range(9):
@@ -11,10 +11,10 @@ def findemptycells():
             if grid[x][y] == 0:
                 empty.append((x,y))
             else:
-                row.setdefault(x,set()).add(grid[x][y])
-                col.setdefault(y,set()).add(grid[x][y])
+                row[x].add(grid[x][y])
+                col[y].add(grid[x][y])
                 a,b = x//3,y//3
-                table.setdefault(a*3+b,set()).add(grid[x][y])
+                table[a*3+b].add(grid[x][y])
 
 
 def solver(i=0, j=0, n=0):
