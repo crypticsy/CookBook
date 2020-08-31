@@ -9,13 +9,8 @@ class RomanNumeralSystem:
         self.decimal = {self.roman[x]:x for x in self.roman}
 
     def romToDec(self,mes):
-        total, tempo, cur = 0,0,""
-        for i in mes:
-            if i != cur:total,cur,tempo = total + tempo if self.roman[cur]>self.roman[i] else total - tempo, i,self.roman[i]
-            else:tempo+= self.roman[cur]
-        total += tempo
-
-        return total
+        v=[{'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}[d]for d in mes]
+        return sum([a,-a][a<b]for a,b in zip(v[:-1],v[1:]))+v[-1]
 
 
     def decToRom(self,mes):

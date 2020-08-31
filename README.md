@@ -22,5 +22,6 @@ A collection of simple and elegant coding problems, that I found interesting.
 * Huffman Code
 
 ### Miscellaneous
+* 11 puzzle
 * Brainfuck Decoder
 * Roman Addition
