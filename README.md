@@ -6,7 +6,7 @@ A collection of simple and elegant coding problems, that I found interesting.
 * Sudoku Solver
 
 ### Cryptography
-* Elliptic-Curve
+* Elliptic-Curve (Incomplete)
 * Enigma without Plugboard
 * Straddling Checkerboard
 * XOR cipher
@@ -22,6 +22,6 @@ A collection of simple and elegant coding problems, that I found interesting.
 * Huffman Code
 
 ### Miscellaneous
-* 11 puzzle
+* 11 puzzle (Incomplete)
 * Brainfuck Decoder
 * Roman Addition
