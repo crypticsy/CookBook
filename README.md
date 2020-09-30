@@ -1,6 +1,6 @@
 # CodeSoup
 
-A collection of simple and elegant coding problems, that I found interesting.
+A collection of simple and elegant coding problems, that I found were interesting.
 
 
 
