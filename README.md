@@ -1,4 +1,4 @@
-# CodeSoup
+# CookBook
 
 A collection of simple and elegant coding problems, that I found were interesting.
 
