@@ -6,6 +6,10 @@ grid,empty = [],[]
 row,col,table = [{x:set() for x in range(9)} for x in range(3)]
 
 def findemptycells():
+    """
+    This is a function to find empty cells in a sudoku map.
+    It will find 0 in the sudoku map and if found then append its position in the list named empty.
+    """
     for x in range(9):
         for y in range(9):
             if grid[x][y] == 0:
