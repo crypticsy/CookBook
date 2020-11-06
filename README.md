@@ -37,4 +37,5 @@ A collection of simple and elegant coding problems, that I found were interestin
 
 * [11 puzzle (Not optimized)](./Miscellaneous/11_puzzle.py)
 * [Brainfuck Decoder](./Miscellaneous/brainfuck_decoder.py)
+* [Number to Text](./Miscellaneous/num_to_text.py)
 * [Roman Addition](./Miscellaneous/roman_addition.py)
