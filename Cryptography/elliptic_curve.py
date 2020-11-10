@@ -33,56 +33,44 @@
 
 
 
-
-
 import sys
-import math
-  
 
-def karatsuba(num1,num2):
-	if num1 < 10 or num2 < 10: return num1 * num2		#base case
-	halfmax = max(len(str(num1)),len(str(num2))) // 2 
-	a = num1 // 10**(halfmax)
-	b = num1 % 10**(halfmax)	
-	c = num2 // 10**(halfmax)
-	d = num2 % 10**(halfmax)
-	ac = karatsuba(a,c)
-	bd = karatsuba(b,d)
-	ad_plus_bc = karatsuba((a+b),(c+d)) - ac - bd
-	return ac * 10**(2*halfmax) + (ad_plus_bc * 10**halfmax) + bd
+def mod_inv(x, P):return pow(x, P-2, P)
+
+def point_add(C, D, P):
+    if C == (0, 0): return D
+    L = ((D[1] - C[1]) * mod_inv(D[0] - C[0], P)) % P
+    X = (L*L - C[0] - D[0]) % P
+    Y = (L * (C[0] - X) - C[1]) % P
+    return (X, Y)
+
+def point_double(C, P):
+    L = ((3 * (C[0]*C[0])) * mod_inv(2*C[1], P)) % P
+    X = (L*L - C[0] - C[0]) % P
+    Y = (L * (C[0] - X) - C[1]) % P
+    return (X, Y)
 
 
-def modDivide(a,b,m): 
-    a = a % m 
-    g = math.gcd(b, m)
-    if g!=1: return None
-    else: return karatsuba(pow(b, m - 2, m), a) % m
-
+def elliptic_curve(start, n, P):
+    N = start
+    Q = (0, 0)
+    i = 1
+    while i <= n:
+        if n & i == i:
+            Q = point_add(Q, N, P)
+        N = point_double(N, P)
+        i *= 2
+        
+    return hex(int(Q[0]))        # public key
 
 
 
 A = 0
 B = 7
-P = int(0x3fddbf07bb3bc551)
-G = (int(0x69d463ce83b758e), int(0x287a120903f7ef5c))     #starting point
+P = 0x3fddbf07bb3bc551
+G = (0x69d463ce83b758e, 0x287a120903f7ef5c)         # starting point
 
-
+# k = int(input(),0)
 k = "0x6f"          # some hex value
 
-point = None
-for _ in range(int(k,0)-1):
-    seen = set()
-    if _ == 0:
-        slope = modDivide( (3*G[0]**2 + A) , (2*G[1]), P)
-        x = (karatsuba(slope, slope) - G[0]*2)% P
-        y = (karatsuba(slope,(G[0] - x)) - G[1])% P
-        point =  (x,y)
-
-    else:
-        slope = modDivide( (point[1] - G[1]) , (point[0] - G[0]), P)
-        x = (karatsuba(slope, slope) - G[0] - point[0]) % P
-        y = (karatsuba(slope,(G[0] - x)) - G[1])% P
-        point =  (x,y)
-
-
-print(hex(point[0]))        # public key
+print( elliptic_curve( G, k, P) )

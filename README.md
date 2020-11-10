@@ -11,7 +11,7 @@ A collection of simple and elegant coding problems, that I found were interestin
 
 ### Cryptography
 
-* [Elliptic-Curve (Not optimized)](./Cryptography/elliptic_curve.py)
+* [Elliptic-Curve](./Cryptography/elliptic_curve.py)
 * [Enigma without Plugboard](./Cryptography/enigma_without_plugboard.py)
 * [Straddling Checkerboard](./Cryptography/straddling_checkerboard.py)
 * [XOR cipher](./Cryptography/xor_cipher.py)
